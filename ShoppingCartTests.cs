@@ -1,6 +1,6 @@
 ﻿namespace supermarket_receipt_kata;
 
-public class UnitTest1
+public class ShoppingCartTests
 {
     [Fact]
     public void Test1()
