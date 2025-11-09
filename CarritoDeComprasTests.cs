@@ -166,4 +166,28 @@ public class CarritoDeComprasTests
         act.Should().Throw<ArgumentException>()
             .WithMessage("*Cerveza*no encontrado*catálogo*");
     }
+    // OFERTAS
+    [Fact]
+    public void Si_Oferta3x2ConTresItems_Debe_PagarSoloDos()
+    {
+        // Arrange
+        var catalogo = new Catalogo();
+        var yogurt = new Producto("Yogurt", TipoProducto.PorUnidad);
+        catalogo.AgregarProducto(yogurt, 2.00m);
+        
+        var oferta = new OfertaTresPorDos(yogurt);
+        var cajero = new Cajero(catalogo);
+        cajero.AgregarOferta(oferta);
+        
+        var carrito = new CarritoDeCompras();
+        carrito.AgregarItem(yogurt, 3m);
+        
+        // Act
+        var recibo = cajero.ProcesarCompra(carrito);
+        
+        // Assert
+        recibo.ObtenerTotal().Should().Be(4.00m);  // Pagas 2, llevas 3
+        recibo.ObtenerDescuentos().Should().HaveCount(1);
+        recibo.ObtenerDescuentos().First().Monto.Should().Be(2.00m);
+    }
 }

@@ -7,4 +7,10 @@
 [x] Productos por peso - Si_AgregoProductoPorPeso_Debe_CalcularSegunKilos
 [x] Precisión decimal - Si_AgregoProductoPorPesoConDecimales_Debe_CalcularCorrectamente
 
+    VALIDACIONES
 [x] Si_CantidadEsNegativa_Debe_LanzarExcepcion
+[x] Si_CantidadEsCero_Debe_LanzarExcepcion
+[x] Si_ProductoNoEstaEnCatalogo_Debe_LanzarExcepcion
+
+    OFERTAS
+   [ ] Si_Oferta3x2ConTresItems_Debe_PagarSoloDos
