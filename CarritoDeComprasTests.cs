@@ -36,4 +36,22 @@ public class CarritoDeComprasTests
         // Assert
         total.Should().Be(2.50);
     }
+    
+    [Fact]
+    public void Si_AgregoVariasUnidadesMismoProducto_Debe_MultiplicarPrecio()
+    {
+        // Arrange
+        var catalogo = new Catalogo();
+        var leche = new Producto("Leche", TipoProducto.PorUnidad);
+        catalogo.AgregarProducto(leche, 3.20);
+        
+        var carrito = new CarritoDeCompras();
+        
+        // Act
+        carrito.AgregarItem(leche, 3);  // 3 unidades
+        var total = carrito.CalcularTotal(catalogo);
+        
+        // Assert
+        total.Should().Be(9.60);  // 3.20 * 3 = 9.60
+    }
 }
