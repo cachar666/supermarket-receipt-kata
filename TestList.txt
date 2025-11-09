@@ -1,3 +1,4 @@
 ﻿
 
-[ ] CarritoVacio_DeberiaObtenerTotalCero 
+[x] CarritoVacio_DeberiaObtenerTotalCero
+[ ] UnProductoPorUnidad_DeberiaCalcularPrecioCorrecto 
