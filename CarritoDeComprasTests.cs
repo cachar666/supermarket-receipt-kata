@@ -147,4 +147,23 @@ public class CarritoDeComprasTests
         act.Should().Throw<ArgumentException>()
             .WithMessage("*cantidad*mayor*cero*");
     }
+    
+    [Fact]
+    public void Si_ProductoNoEstaEnCatalogo_Debe_LanzarExcepcion()
+    {
+        // Arrange
+        var catalogo = new Catalogo();
+        var carrito = new CarritoDeCompras();
+        var cerveza = new Producto("Cerveza", TipoProducto.PorUnidad);
+        
+        // Producto NO se agrega al catálogo intencionalmente
+        carrito.AgregarItem(cerveza, 6m);
+        
+        // Act
+        Action act = () => carrito.CalcularTotal(catalogo);
+        
+        // Assert
+        act.Should().Throw<ArgumentException>()
+            .WithMessage("*Cerveza*no encontrado*catálogo*");
+    }
 }
