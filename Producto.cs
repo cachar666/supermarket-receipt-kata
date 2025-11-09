@@ -17,17 +17,17 @@ public class Producto
         Tipo = tipo;
     }
 
-    public override bool Equals(object? obj)
-    {
-        if (obj is not Producto otroProducto)
-            return false;
+    // public override bool Equals(object? obj)
+    // {
+    //     if (obj is not Producto otroProducto)
+    //         return false;
+    //
+    //     return Nombre == otroProducto.Nombre 
+    //            && Tipo == otroProducto.Tipo;
+    // }
 
-        return Nombre == otroProducto.Nombre 
-               && Tipo == otroProducto.Tipo;
-    }
-
-    public override int GetHashCode()
-    {
-        return (Nombre, Tipo).GetHashCode();
-    }
+    // public override int GetHashCode()
+    // {
+    //     return (Nombre, Tipo).GetHashCode();
+    // }
 }

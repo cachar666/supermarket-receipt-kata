@@ -132,4 +132,19 @@ public class CarritoDeComprasTests
         act.Should().Throw<ArgumentException>()
             .WithMessage("*cantidad*mayor*cero*");
     }
+    
+    [Fact]
+    public void Si_CantidadEsCero_Debe_LanzarExcepcion()
+    {
+        // Arrange
+        var carrito = new CarritoDeCompras();
+        var producto = new Producto("Pan", TipoProducto.PorUnidad);
+        
+        // Act
+        Action act = () => carrito.AgregarItem(producto, 0m);
+        
+        // Assert
+        act.Should().Throw<ArgumentException>()
+            .WithMessage("*cantidad*mayor*cero*");
+    }
 }
