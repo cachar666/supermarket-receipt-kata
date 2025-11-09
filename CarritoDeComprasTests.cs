@@ -1,19 +1,21 @@
 ﻿using FluentAssertions;
+using supermarket_receipt_kata.Model;
 
 namespace supermarket_receipt_kata;
 
 public class CarritoDeComprasTests
 {
     [Fact]
-    public void CarritoVacio_DeberiaObtenerTotalCero()
+    public void Si_CarritoVacio_Debe_TotalReciboSerCero()
     {
-        // Arrange (Preparar)
+        // Arrange
+        var catalogo = new Catalogo();
         var carrito = new CarritoDeCompras();
         
-        // Act (Actuar)
-        var total = carrito.ObtenerTotal();
+        // Act
+        var total = carrito.CalcularTotal(catalogo);
         
-        // Assert (Afirmar)
+        // Assert
         total.Should().Be(0.0);
     }
     
