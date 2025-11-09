@@ -1,4 +1,8 @@
 ﻿
 
-[x] CarritoVacio_DeberiaObtenerTotalCero
-[ ] UnProductoPorUnidad_DeberiaCalcularPrecioCorrecto 
+[x] Carrito vacío - Si_CarritoVacio_Debe_TotalReciboSerCero
+[x] Producto único - Si_AgregoUnProductoPorUnidad_Debe_CalcularPrecioCorrecto
+[x] Múltiples unidades - Si_AgregoVariasUnidadesMismoProducto_Debe_MultiplicarPrecio
+[x] Múltiples productos - Si_AgregoVariosProductosDiferentes_Debe_SumarTodosLosPrecios
+[x] Productos por peso - Si_AgregoProductoPorPeso_Debe_CalcularSegunKilos
+[x] Precisión decimal - Si_AgregoProductoPorPesoConDecimales_Debe_CalcularCorrectamente
