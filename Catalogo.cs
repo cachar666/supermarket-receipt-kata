@@ -2,14 +2,14 @@
 
 public class Catalogo
 {
-    private readonly Dictionary<Producto, double> _precios = new();
+    private readonly Dictionary<Producto, decimal> _precios = new();
 
-    public void AgregarProducto(Producto producto, double precio)
+    public void AgregarProducto(Producto producto, decimal precio)
     {
         _precios[producto] = precio;
     }
 
-    public double ObtenerPrecio(Producto producto)
+    public decimal ObtenerPrecio(Producto producto)
     {
         if (_precios.TryGetValue(producto, out var precio))
         {

@@ -6,14 +6,14 @@ public class CarritoDeCompras
 {
     private readonly List<ItemCarrito> _items = new();
 
-    public void AgregarItem(Producto producto, double cantidad)
+    public void AgregarItem(Producto producto, decimal cantidad)
     {
         _items.Add(new ItemCarrito(producto, cantidad));
     }
 
-    public double CalcularTotal(Catalogo catalogo)
+    public decimal CalcularTotal(Catalogo catalogo)
     {
-        double total = 0.0;
+        decimal total = 0.0m;
         
         foreach (var item in _items)
         {
@@ -28,9 +28,9 @@ public class CarritoDeCompras
 public class ItemCarrito
 {
     public Producto Producto { get; }
-    public double Cantidad { get; }
+    public decimal Cantidad { get; }
 
-    public ItemCarrito(Producto producto, double cantidad)
+    public ItemCarrito(Producto producto, decimal cantidad)
     {
         Producto = producto;
         Cantidad = cantidad;

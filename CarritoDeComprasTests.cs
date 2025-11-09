@@ -16,25 +16,25 @@ public class CarritoDeComprasTests
         var total = carrito.CalcularTotal(catalogo);
         
         // Assert
-        total.Should().Be(0.0);
+        total.Should().Be(0.0m);  // ← Nota la 'm'
     }
     
     [Fact]
-    public void UnProductoPorUnidad_DeberiaCalcularPrecioCorrecto()
+    public void Si_AgregoUnProductoPorUnidad_Debe_CalcularPrecioCorrecto()
     {
         // Arrange
         var catalogo = new Catalogo();
         var manzanas = new Producto("Manzanas", TipoProducto.PorUnidad);
-        catalogo.AgregarProducto(manzanas, 2.50);
+        catalogo.AgregarProducto(manzanas, 2.50m);  // ← 'm'
         
         var carrito = new CarritoDeCompras();
         
         // Act
-        carrito.AgregarItem(manzanas, 1);
+        carrito.AgregarItem(manzanas, 1m);  // ← 'm'
         var total = carrito.CalcularTotal(catalogo);
         
         // Assert
-        total.Should().Be(2.50);
+        total.Should().Be(2.50m);  // ← 'm'
     }
     
     [Fact]
@@ -43,15 +43,15 @@ public class CarritoDeComprasTests
         // Arrange
         var catalogo = new Catalogo();
         var leche = new Producto("Leche", TipoProducto.PorUnidad);
-        catalogo.AgregarProducto(leche, 3.20);
+        catalogo.AgregarProducto(leche, 3.20m);  // ← 'm'
         
         var carrito = new CarritoDeCompras();
         
         // Act
-        carrito.AgregarItem(leche, 3);  // 3 unidades
+        carrito.AgregarItem(leche, 3m);  // ← 'm'
         var total = carrito.CalcularTotal(catalogo);
         
         // Assert
-        total.Should().Be(9.60);  // 3.20 * 3 = 9.60
+        total.Should().Be(9.60m);  // ← 'm'
     }
 }
