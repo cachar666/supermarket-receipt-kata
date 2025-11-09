@@ -8,6 +8,11 @@ public class CarritoDeCompras
 
     public void AgregarItem(Producto producto, decimal cantidad)
     {
+        if (cantidad <= 0)
+        {
+            throw new ArgumentException("La cantidad debe ser mayor a cero", nameof(cantidad));
+        }
+        
         _items.Add(new ItemCarrito(producto, cantidad));
     }
 
