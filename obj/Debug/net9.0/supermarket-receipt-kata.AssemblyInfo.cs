@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("supermarket-receipt-kata")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9ef8f255904d3733f559a034701e1b42d64ce8b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abae2cca6c9e0ca40f3261f79a2d62cfcc22ad6e")]
 [assembly: System.Reflection.AssemblyProductAttribute("supermarket-receipt-kata")]
 [assembly: System.Reflection.AssemblyTitleAttribute("supermarket-receipt-kata")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

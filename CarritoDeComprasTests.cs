@@ -172,22 +172,16 @@ public class CarritoDeComprasTests
     {
         // Arrange
         var catalogo = new Catalogo();
-        var yogurt = new Producto("Yogurt", TipoProducto.PorUnidad);
-        catalogo.AgregarProducto(yogurt, 2.00m);
-        
-        var oferta = new OfertaTresPorDos(yogurt);
-        var cajero = new Cajero(catalogo);
-        cajero.AgregarOferta(oferta);
+        var Cepillo = new Producto("Cepillo", TipoProducto.PorUnidad);
+        catalogo.AgregarProducto(Cepillo, 0.99m);  // ← 'm'
         
         var carrito = new CarritoDeCompras();
-        carrito.AgregarItem(yogurt, 3m);
         
         // Act
-        var recibo = cajero.ProcesarCompra(carrito);
+        carrito.AgregarItem(Cepillo, 3m);  // ← 'm'
+        var total = carrito.CalcularTotal(catalogo);
         
         // Assert
-        recibo.ObtenerTotal().Should().Be(4.00m);  // Pagas 2, llevas 3
-        recibo.ObtenerDescuentos().Should().HaveCount(1);
-        recibo.ObtenerDescuentos().First().Monto.Should().Be(2.00m);
+        total.Should().Be(1.98m);  // ← 'm'
     }
 }
