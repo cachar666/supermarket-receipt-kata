@@ -134,7 +134,7 @@ public class CarritoDeComprasTests
     }
     
     [Fact]
-    public void Si_CantidadEsCero_Debe_LanzarExcepcion()
+    public void Si_CantidadEsCero_Debe_LanzarExcepcions()
     {
         // Arrange
         var carrito = new CarritoDeCompras();
